@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.my-20 {
+  margin: 20px 0 !important;
+}
+
+.mr-20 {
+  margin-right: 20px !important;
+}
+
+.ml-10 {
+  margin-left: 10px !important;
+}
+
+.ml-20 {
+  margin-left: 20px !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Css post detail */
+.header {
+  background-position: center center;
+  background-size: cover;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 110px;
+  color: #fff;
+  text-align: center;
+}
+
+.hestia-title {
+  margin: 20px 0 10px;
+  font-size: 42px;
+  font-family: Raleway;
+  line-height: 1.4;
+}
+
+.author {
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: 'Raleway';
+}
+
+.author strong {
+  font-weight: bold !important;
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: 'Raleway';
+}
+
+.gradient {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #fafafa 61.38%);
+}
+
+.main-raised {
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  background: #fff;
+  position: relative;
+  margin: -200px 15px 0;
+}
+
+.container-post {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  display: flex;
+  padding: 70px 0;
+}
+
+.col-md-8 {
+  width: 66.66666667%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-md-3 {
+  width: 33.33333332%;
+  float: left;
+  position: static;
+  background: 0 0;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: initial;
+}
+
+.col-md-3 h5 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+aside {
+  font-family: 'Raleway';
+}
+
+aside ul {
+  padding: 0 0 0 10px;
+  margin: 0;
+  list-style: none;
+}
+
+aside ul li:first-child {
+  padding-top: 0;
+}
+
+aside ul li {
+  line-height: 2.4;
+}
+
+aside ul li a {
+  color: #23527c;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+aside ul li a:hover {
+  opacity: 0.75;
+  color: #ff711b;
+}
+
+.single-post-wrap {
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.618;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.section-post-info {
+  padding-top: 15px;
+  padding: 70px 0;
+}
+
+.row-post-info {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.entry-categories,
+.entry-tags {
+  font-weight: 300;
+  line-height: 1.618;
+  font-size: 14px;
+}
+
+.entry-categories span,
+.entry-tags span {
+  display: inline-block;
+  margin: 5px;
+  font-size: 10px;
+  background-color: #ff711b;
+  padding: 5px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
