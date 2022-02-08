@@ -38,4 +38,27 @@ export const PATH_NAME = {
   USERS_ADD: '/users/add',
   USERS_EDIT: '/users/edit/:id',
   USERS_DETAIL: '/users/detail/:id',
+
+  APPLICATION: '/applications',
+  APPLICATION_LIST: '/applications/list',
+  APPLICATION_ADD: '/applications/add',
+  APPLICATION_EDIT: '/applications/edit/:id',
+  APPLICATION_DETAIL: '/applications/detail/:id',
+
+  SOLUTION: '/solutions',
+  SOLUTION_LIST: '/solutions/list',
+  SOLUTION_ADD: '/solutions/add',
+  SOLUTION_EDIT: '/solutions/edit/:id',
+  SOLUTION_DETAIL: '/solutions/detail/:id',
+
+  MANAGER: '/managers',
+  MANAGER_LIST: '/managers/list',
+  MANAGER_ADD: '/managers/add',
+  MANAGER_EDIT: '/managers/edit/:id',
+  MANAGER_DETAIL: '/managers/detail/:id',
+
+  ABOUTUS: '/aboutus',
+  ABOUTUS_LIST: '/aboutus/list',
+  ABOUTUS_EDIT: '/aboutus/edit/:id',
+  ABOUTUS_DETAIL: '/aboutus/detail/:id',
 };

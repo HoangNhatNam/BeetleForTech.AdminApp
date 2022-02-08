@@ -46,6 +46,26 @@ export const navBarCommon = [
         ],
       },
       {
+        title: 'Application',
+        icon: FileCopyIcon,
+        href: PATH_NAME.APPLICATION,
+        label: DRAWER_MENU_LABEL.APPLICATION,
+        items: [
+          {
+            title: 'Add Application',
+            icon: AddIcon,
+            href: PATH_NAME.APPLICATION_ADD,
+            label: DRAWER_MENU_LABEL.APPLICATION_ADD,
+          },
+          {
+            title: 'List Application',
+            icon: ViewListIcon,
+            href: PATH_NAME.APPLICATION_LIST,
+            label: DRAWER_MENU_LABEL.APPLICATION_LIST,
+          },
+        ],
+      },
+      {
         title: 'Contact',
         icon: ContactMailIcon,
         href: PATH_NAME.CONTACT,
@@ -110,6 +130,60 @@ export const navBarCommon = [
             icon: ViewListIcon,
             href: PATH_NAME.PARTNER_LIST,
             label: DRAWER_MENU_LABEL.PARTNER_LIST,
+          },
+        ],
+      },
+      {
+        title: 'Solution',
+        icon: CategoryIcon,
+        href: PATH_NAME.SOLUTION,
+        label: DRAWER_MENU_LABEL.SOLUTION,
+        items: [
+          {
+            title: 'Add Solution',
+            icon: AddIcon,
+            href: PATH_NAME.SOLUTION_ADD,
+            label: DRAWER_MENU_LABEL.SOLUTION_ADD,
+          },
+          {
+            title: 'List Solution',
+            icon: ViewListIcon,
+            href: PATH_NAME.SOLUTION_LIST,
+            label: DRAWER_MENU_LABEL.SOLUTION_LIST,
+          },
+        ],
+      },
+      {
+        title: 'Manager',
+        icon: CategoryIcon,
+        href: PATH_NAME.MANAGER,
+        label: DRAWER_MENU_LABEL.MANAGER,
+        items: [
+          {
+            title: 'Add Manager',
+            icon: AddIcon,
+            href: PATH_NAME.MANAGER_ADD,
+            label: DRAWER_MENU_LABEL.MANAGER_ADD,
+          },
+          {
+            title: 'List Manager',
+            icon: ViewListIcon,
+            href: PATH_NAME.MANAGER_LIST,
+            label: DRAWER_MENU_LABEL.MANAGER_LIST,
+          },
+        ],
+      },
+      {
+        title: 'About Us',
+        icon: CategoryIcon,
+        href: PATH_NAME.ABOUTUS,
+        label: DRAWER_MENU_LABEL.ABOUTUS,
+        items: [
+          {
+            title: 'List About Us',
+            icon: ViewListIcon,
+            href: PATH_NAME.ABOUTUS_LIST,
+            label: DRAWER_MENU_LABEL.ABOUTUS_LIST,
           },
         ],
       },

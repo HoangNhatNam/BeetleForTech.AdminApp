@@ -48,6 +48,18 @@ const Users = lazy(() => import('features/Users'));
 const UserAdd = lazy(() => import('features/Users/UserAdd'));
 const UserEdit = lazy(() => import('features/Users/UserEdit'));
 
+const ApplicationAdd = lazy(() => import('features/Application/AppAdd'));
+const ApplicationList = lazy(() => import('features/Application/AppList'));
+
+const SolutionAdd = lazy(() => import('features/Solution/SolutionAdd'));
+const SolutionList = lazy(() => import('features/Solution/SolutionList'));
+
+const ManaAdd = lazy(() => import('features/Manager/ManagerAdd'));
+const ManaList = lazy(() => import('features/Manager/ManagerList'));
+
+const AboutList = lazy(() => import('features/AboutUs/AboutList'));
+const AboutEdit = lazy(() => import('features/AboutUs/AboutEdit'));
+
 const Dashboard = lazy(() => import('features/Dashboard'));
 const Login = lazy(() => import('features/Login'));
 
@@ -208,6 +220,54 @@ const routesConfig: IRoutes[] = [
         exact: true,
         path: PATH_NAME.USERS_EDIT,
         component: UserEdit,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.APPLICATION_ADD,
+        component: ApplicationAdd,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.APPLICATION_LIST,
+        component: ApplicationList,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.SOLUTION_ADD,
+        component: SolutionAdd,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.SOLUTION_LIST,
+        component: SolutionList,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.MANAGER_ADD,
+        component: ManaAdd,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.MANAGER_LIST,
+        component: ManaList,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.ABOUTUS_LIST,
+        component: AboutList,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.ABOUTUS_EDIT,
+        component: AboutEdit,
         requireRoles: [USER_ROLE.ADMIN],
       },
       {
