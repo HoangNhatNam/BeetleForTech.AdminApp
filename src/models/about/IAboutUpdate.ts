@@ -1,4 +1,4 @@
-export default interface IApplicationUpdate {
+export default interface IAboutUpdate {
   id: number;
   title: string;
   content: string;

@@ -87,7 +87,6 @@ function UserList() {
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
-              <TableCell>Role</TableCell>
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
@@ -98,7 +97,6 @@ function UserList() {
                   {row.userName}
                 </TableCell>
                 <TableCell>{row.email}</TableCell>
-                <TableCell>{`${row.roles} ,`}</TableCell>
                 <TableCell>
                   <IconButton color="primary" aria-label="" onClick={() => onDelete(row.id)} component="span">
                     <DeleteIcon />

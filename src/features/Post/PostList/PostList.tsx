@@ -23,7 +23,7 @@ import IPostView from 'models/IPostView';
 import PaginationBase from 'components/molecules/PaginationBase';
 
 // configs
-import { PATH_NAME } from 'configs';
+import { PATH_NAME, HttpConfig } from 'configs';
 
 // helpers
 import { canAction } from 'helpers';
@@ -99,7 +99,7 @@ function PostList() {
                   {row.title}
                 </TableCell>
                 <TableCell>
-                  <img src={`https://localhost:44311/${row.imagePath}`} style={{ height: '150px' }} alt="" />
+                  <img src={HttpConfig.BaseURL + row.imagePath} style={{ height: '150px' }} alt="" />
                 </TableCell>
                 <TableCell>
                   {new Intl.DateTimeFormat('en-GB', {

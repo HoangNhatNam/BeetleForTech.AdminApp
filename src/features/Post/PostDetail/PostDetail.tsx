@@ -5,6 +5,7 @@ import IPostView from 'models/IPostView';
 import '@pathofdev/react-tag-input/build/index.css';
 import ICategoryView from 'models/ICategoryView';
 import CategoryService from 'services/CategoryService';
+import { HttpConfig } from 'configs';
 
 interface RouterProps {
   id: string;
@@ -51,7 +52,7 @@ const PostDetail: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <header className="header" style={{ backgroundImage: `url(https://localhost:44311/${currentPost.imagePath})` }}>
+      <header className="header" style={{ backgroundImage: `url(${HttpConfig.BaseURL + currentPost.imagePath})` }}>
         <div className="container">
           <h1 className="hestia-title">{currentPost.title}</h1>
           <h4 className="author">

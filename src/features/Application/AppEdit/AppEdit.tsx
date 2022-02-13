@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import '@pathofdev/react-tag-input/build/index.css';
 import { useHistory, RouteComponentProps } from 'react-router-dom';
 import { PATH_NAME } from 'configs';
-import IAboutUpdate from 'models/about/IAboutUpdate';
-import AboutUsService from 'services/AboutUsService';
+import ApplicationService from 'services/ApplicationService';
+import IApplicationUpdate from 'models/application/IApplicationUpdate';
 
 interface RouterProps {
   id: string;
@@ -18,32 +18,33 @@ interface RouterProps {
 
 type Props = RouteComponentProps<RouterProps>;
 
-const AboutUsEdit: React.FC<Props> = (props: Props) => {
-  const initAboutUsState = {
+const AppEdit: React.FC<Props> = (props: Props) => {
+  const initAppState = {
     id: 0,
     title: '',
     content: '',
   };
   const history = useHistory();
-  const [aboutUs, setAboutUs] = useState<IAboutUpdate>(initAboutUsState);
+  const [application, setApplication] = useState<IApplicationUpdate>(initAppState);
   const [fileSelected, setFileSelected] = useState<File>();
 
-  const getAboutUs = (id: string) => {
-    AboutUsService.get(id)
+  const getApplication = (id: string) => {
+    ApplicationService.getUpdate(id)
       .then((response: any) => {
-        aboutUs.id = response.data.id;
-        aboutUs.title = response.data.title;
-        aboutUs.content = response.data.content;
+        application.id = response.data.id;
+        application.title = response.data.title;
+        application.content = response.data.content;
+        console.log(application);
       })
       .catch((e: Error) => {});
   };
 
   useEffect(() => {
-    getAboutUs(props.match.params.id);
+    getApplication(props.match.params.id);
   }, [props.match.params.id]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setAboutUs({ ...aboutUs, [e.target.name]: e.target.value });
+    setApplication({ ...application, [e.target.name]: e.target.value });
   };
 
   const handleFileInput = (e: any) => {
@@ -51,21 +52,21 @@ const AboutUsEdit: React.FC<Props> = (props: Props) => {
   };
 
   const handleContentChange = (event: any) => {
-    setAboutUs({ ...aboutUs, content: event });
+    setApplication({ ...application, content: event });
   };
 
-  const updateAboutUs = () => {
+  const updateApp = () => {
     const formData = new FormData();
-    formData.append('id', JSON.stringify(aboutUs.id));
-    formData.append('title', aboutUs.title);
-    formData.append('content', aboutUs.content);
+    formData.append('id', JSON.stringify(application.id));
+    formData.append('title', application.title);
+    formData.append('content', application.content);
     if (fileSelected) {
-      formData.append('imageAboutUs', fileSelected);
+      formData.append('thumbnailImage', fileSelected);
     }
 
-    AboutUsService.update(formData)
+    ApplicationService.update(formData)
       .then((response: any) => {
-        history.push(PATH_NAME.ABOUTUS_LIST);
+        history.push(PATH_NAME.APPLICATION_LIST);
       })
       .catch((e: Error) => {});
   };
@@ -74,22 +75,22 @@ const AboutUsEdit: React.FC<Props> = (props: Props) => {
     <>
       <Grid container alignItems="center">
         <Grid item sm={12}>
-          <h2>Edit About Us</h2>
+          <h2>Edit Application</h2>
         </Grid>
       </Grid>
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
           <h4>Title</h4>
-          <TextField fullWidth variant="outlined" label="Title" value={aboutUs.title} onChange={handleChange} name="title" />
+          <TextField fullWidth variant="outlined" label="Title" value={application.title} onChange={handleChange} name="title" />
         </Grid>
 
         <Grid item xs={12} md={12}>
           <h4>Content</h4>
-          <ReactQuill value={aboutUs.content} onChange={handleContentChange} />
+          <ReactQuill value={application.content} onChange={handleContentChange} />
         </Grid>
 
         <Grid item xs={12} md={12}>
-          <h4>About Us Image</h4>
+          <h4>Thumbnail Image</h4>
           <input type="file" onChange={handleFileInput} accept="image/*" />
         </Grid>
       </Grid>
@@ -98,10 +99,10 @@ const AboutUsEdit: React.FC<Props> = (props: Props) => {
       <Grid container spacing={2}>
         <br />
         <Grid container item sm={12} md={12} justify="flex-end">
-          <Button variant="outlined" color="primary" className="mr-20" onClick={() => history.push('/aboutus/list/')}>
+          <Button variant="outlined" color="primary" className="mr-20" onClick={() => history.push('/applications/list/')}>
             Cancel
           </Button>
-          <Button color="primary" variant="contained" onClick={updateAboutUs}>
+          <Button color="primary" variant="contained" onClick={updateApp}>
             Update
           </Button>
         </Grid>
@@ -110,4 +111,4 @@ const AboutUsEdit: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default AboutUsEdit;
+export default AppEdit;

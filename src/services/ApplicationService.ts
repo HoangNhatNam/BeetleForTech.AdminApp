@@ -1,3 +1,4 @@
+import IApplicationUpdate from 'models/application/IApplicationUpdate';
 import IApplicationView from '../models/application/IApplicationView';
 import http from './http-common';
 
@@ -7,6 +8,10 @@ const getAll = () => {
 
 const get = (id: any) => {
   return http.get<IApplicationView>(`/Application/${id}`);
+};
+
+const getUpdate = (id: any) => {
+  return http.get<IApplicationUpdate>(`/Application/update/${id}`);
 };
 
 const create = (data: any) => {
@@ -24,6 +29,7 @@ const remove = (id: any) => {
 const ApplicationService = {
   getAll,
   get,
+  getUpdate,
   create,
   update,
   remove,

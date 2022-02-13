@@ -50,12 +50,17 @@ const UserEdit = lazy(() => import('features/Users/UserEdit'));
 
 const ApplicationAdd = lazy(() => import('features/Application/AppAdd'));
 const ApplicationList = lazy(() => import('features/Application/AppList'));
+const ApplicationEdit = lazy(() => import('features/Application/AppEdit'));
+const ApplicationDetail = lazy(() => import('features/Application/AppDetail'));
 
 const SolutionAdd = lazy(() => import('features/Solution/SolutionAdd'));
 const SolutionList = lazy(() => import('features/Solution/SolutionList'));
+const SolutionEdit = lazy(() => import('features/Solution/SolutionEdit'));
 
 const ManaAdd = lazy(() => import('features/Manager/ManagerAdd'));
 const ManaList = lazy(() => import('features/Manager/ManagerList'));
+const ManaEdit = lazy(() => import('features/Manager/ManagerEdit'));
+const ManaDetail = lazy(() => import('features/Manager/ManagerDetail'));
 
 const AboutList = lazy(() => import('features/AboutUs/AboutList'));
 const AboutEdit = lazy(() => import('features/AboutUs/AboutEdit'));
@@ -236,6 +241,18 @@ const routesConfig: IRoutes[] = [
       },
       {
         exact: true,
+        path: PATH_NAME.APPLICATION_EDIT,
+        component: ApplicationEdit,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.APPLICATION_DETAIL,
+        component: ApplicationDetail,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
         path: PATH_NAME.SOLUTION_ADD,
         component: SolutionAdd,
         requireRoles: [USER_ROLE.ADMIN],
@@ -248,6 +265,12 @@ const routesConfig: IRoutes[] = [
       },
       {
         exact: true,
+        path: PATH_NAME.SOLUTION_EDIT,
+        component: SolutionEdit,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
         path: PATH_NAME.MANAGER_ADD,
         component: ManaAdd,
         requireRoles: [USER_ROLE.ADMIN],
@@ -256,6 +279,18 @@ const routesConfig: IRoutes[] = [
         exact: true,
         path: PATH_NAME.MANAGER_LIST,
         component: ManaList,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.MANAGER_EDIT,
+        component: ManaEdit,
+        requireRoles: [USER_ROLE.ADMIN],
+      },
+      {
+        exact: true,
+        path: PATH_NAME.MANAGER_DETAIL,
+        component: ManaDetail,
         requireRoles: [USER_ROLE.ADMIN],
       },
       {

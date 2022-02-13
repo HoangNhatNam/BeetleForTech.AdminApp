@@ -23,7 +23,7 @@ import ISolutionView from 'models/solution/ISolutionView';
 import PaginationBase from 'components/molecules/PaginationBase';
 
 // configs
-import { PATH_NAME } from 'configs';
+import { PATH_NAME, HttpConfig } from 'configs';
 
 // helpers
 import { canAction } from 'helpers';
@@ -99,9 +99,11 @@ function SolutionList() {
                   {row.title}
                 </TableCell>
                 <TableCell>
-                  <img src={`https://localhost:44311/${row.imagePath}`} style={{ height: '150px' }} alt="" />
+                  <img src={HttpConfig.BaseURL + row.imagePath} style={{ height: '150px' }} alt="" />
                 </TableCell>
-                <TableCell>{row.content}</TableCell>
+                <TableCell>
+                  <div dangerouslySetInnerHTML={{ __html: row.content }} />
+                </TableCell>
                 <TableCell>
                   <IconButton
                     color="primary"
@@ -113,14 +115,6 @@ function SolutionList() {
                   </IconButton>
                   <IconButton color="primary" aria-label="" onClick={() => onDelete(row.id)} component="span">
                     <DeleteIcon />
-                  </IconButton>
-                  <IconButton
-                    color="primary"
-                    aria-label=""
-                    onClick={() => history.push(`/solutions/detail/${row.id}`)}
-                    component="span"
-                  >
-                    <InfoIcon />
                   </IconButton>
                 </TableCell>
               </TableRow>

@@ -23,7 +23,7 @@ import IApplicationView from 'models/application/IApplicationView';
 import PaginationBase from 'components/molecules/PaginationBase';
 
 // configs
-import { PATH_NAME } from 'configs';
+import { PATH_NAME, HttpConfig } from 'configs';
 
 // helpers
 import { canAction } from 'helpers';
@@ -99,7 +99,7 @@ function AppList() {
                   {row.title}
                 </TableCell>
                 <TableCell>
-                  <img src={`https://localhost:44311/${row.imagePath}`} style={{ height: '150px' }} alt="" />
+                  <img src={HttpConfig.BaseURL + row.imagePath} style={{ height: '150px' }} alt="" />
                 </TableCell>
                 <TableCell>
                   {new Intl.DateTimeFormat('en-GB', {
@@ -113,7 +113,7 @@ function AppList() {
                     color="primary"
                     aria-label=""
                     component="span"
-                    onClick={() => history.push(`/application/edit/${row.id}`)}
+                    onClick={() => history.push(`/applications/edit/${row.id}`)}
                   >
                     <EditIcon />
                   </IconButton>
@@ -123,7 +123,7 @@ function AppList() {
                   <IconButton
                     color="primary"
                     aria-label=""
-                    onClick={() => history.push(`/application/detail/${row.id}`)}
+                    onClick={() => history.push(`/applications/detail/${row.id}`)}
                     component="span"
                   >
                     <InfoIcon />

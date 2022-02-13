@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { HttpConfig } from 'configs';
 
-const API_URL = 'https://localhost:44311/api/users/';
+const API_URL = `${HttpConfig.BaseURL}api/users/`;
 
 class AuthService {
   handleAuthentication = () => {

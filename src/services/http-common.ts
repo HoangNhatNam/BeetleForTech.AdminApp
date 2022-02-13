@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { HttpConfig } from 'configs';
 
 export default axios.create({
-  baseURL: 'https://localhost:44311/api',
+  baseURL: `${HttpConfig.BaseURL}api`,
   headers: {
     'Content-type': 'application/json',
   },

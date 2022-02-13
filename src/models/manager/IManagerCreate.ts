@@ -3,4 +3,5 @@ export default interface IManagerCreate {
   role: string;
   email: string;
   phone: string;
+  description: string;
 }

@@ -22,7 +22,7 @@ import IPartnerView from 'models/partner/IPartnerView';
 import PaginationBase from 'components/molecules/PaginationBase';
 
 // configs
-import { PATH_NAME } from 'configs';
+import { PATH_NAME, HttpConfig } from 'configs';
 
 // helpers
 import { canAction } from 'helpers';
@@ -98,7 +98,7 @@ function PartnerList() {
                   {row.name}
                 </TableCell>
                 <TableCell>
-                  <img src={`https://localhost:44311/${row.imagePath}`} style={{ height: '150px' }} alt="" />
+                  <img src={HttpConfig.BaseURL + row.imagePath} style={{ height: '150px' }} alt="" />
                 </TableCell>
                 <TableCell>{row.linkPartner}</TableCell>
                 <TableCell>

@@ -108,7 +108,6 @@ function Dashboard() {
                       <TableCell>User Name</TableCell>
                       <TableCell>Email</TableCell>
                       <TableCell>Full Name</TableCell>
-                      <TableCell>Role</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -119,7 +118,6 @@ function Dashboard() {
                           {user.email}
                         </TableCell>
                         <TableCell>{user.lastName + user.firstName}</TableCell>
-                        <TableCell>{`${user.roles} ,`}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
