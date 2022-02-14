@@ -14,6 +14,10 @@ const get = (id: any) => {
   return http.get<IUser>(`/users/getall/${id}`);
 };
 
+const getUserId = (id: any) => {
+  return http.get<IUser>(`/users/${id}`);
+};
+
 const create = (data: any) => {
   return http.post('/users/register', data);
 };
@@ -39,6 +43,7 @@ const UserService = {
   get,
   getUser,
   create,
+  getUserId,
   update,
   remove,
   removeAll,

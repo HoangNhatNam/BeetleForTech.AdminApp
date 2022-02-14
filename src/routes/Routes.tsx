@@ -47,6 +47,7 @@ const PartnerEdit = lazy(() => import('features/Partner/PartnerEdit'));
 const Users = lazy(() => import('features/Users'));
 const UserAdd = lazy(() => import('features/Users/UserAdd'));
 const UserEdit = lazy(() => import('features/Users/UserEdit'));
+const UserDetail = lazy(() => import('features/Users/UserDetail'));
 
 const ApplicationAdd = lazy(() => import('features/Application/AppAdd'));
 const ApplicationList = lazy(() => import('features/Application/AppList'));
@@ -217,14 +218,14 @@ const routesConfig: IRoutes[] = [
       },
       {
         exact: true,
-        path: PATH_NAME.USERS_DETAIL,
-        component: PostDetail,
+        path: PATH_NAME.USERS_EDIT,
+        component: UserEdit,
         requireRoles: [USER_ROLE.ADMIN],
       },
       {
         exact: true,
-        path: PATH_NAME.USERS_EDIT,
-        component: UserEdit,
+        path: PATH_NAME.USERS_DETAIL,
+        component: UserDetail,
         requireRoles: [USER_ROLE.ADMIN],
       },
       {

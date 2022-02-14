@@ -15,6 +15,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import InfoIcon from '@material-ui/icons/Info';
+import EditIcon from '@material-ui/icons/Edit';
 import { IUser } from 'models/IUser';
 import UserService from 'services/UserService';
 
@@ -101,11 +102,19 @@ function UserList() {
                   <IconButton color="primary" aria-label="" onClick={() => onDelete(row.id)} component="span">
                     <DeleteIcon />
                   </IconButton>
+                  {/* <IconButton
+                    color="primary"
+                    aria-label=""
+                    onClick={() => history.push(`/users/edit/${row.id}`)}
+                    component="span"
+                  >
+                    <InfoIcon />
+                  </IconButton> */}
                   <IconButton
                     color="primary"
                     aria-label=""
-                    onClick={() => history.push(`/demo/detail/${row.id}`)}
                     component="span"
+                    onClick={() => history.push(`/users/detail/${row.id}`)}
                   >
                     <InfoIcon />
                   </IconButton>
